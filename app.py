@@ -42,6 +42,11 @@ def action_button_click(body, ack, say):
     ack()
     say(f"<@{body['user']['id']}> clicked the button")
 
+@app.command("/grill")
+def grill(ack, respond, command):
+    ack()
+    respond(f"{command['text']}")
+
 
 if __name__ == "__main__":
     SocketModeHandler(app, SLACK_APP_TOKEN).start()
